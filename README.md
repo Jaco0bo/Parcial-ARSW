@@ -61,6 +61,43 @@ cambiar el proveedor de una funcionalidad.
 y github para almacenar al código fuente AWS o
 AZURE como plataforma de producción.
 
+## Descripcion del diseño:
+
+**Explicación de la Arquitectura del Proyecto:**
+
+La arquitectura del sistema está diseñada bajo un enfoque distribuido y orientado a servicios haciendo uso de la estrcutura cliente-servidor utilizando tecnologías como React para el cliente web y Spring Boot para el servidor backend (definido por los requisitos). Esta arquitectura también actúa como gateway hacia servicios externos, permitiendo una integración desacoplada y eficiente.
+
+Estilo de Arquitectura: **RESTful Services**.
+
+- Componentes Principales
+  
+  - **Cliente Web (Frontend - React)**
+    Este cliente es asincrono de manera que no se queda parado en caso de que la peticion no llegue o este mal, ademas cuanta con una interfaz moderna y agradable (o eso se intento) y consume los servicios del backend a travez de peticiones HTTP usando axios.
+    Por ultimo tambien es multiusario lo que le permite manejar multipes sesiones a la vez (concurrencia).
+
+
+
+  - **Servidor Backend (Spring Boot - Gateway)**
+
+    El papel principal de este servidor es ser una fachada o gateway, encapsulando llamadas a servicios web externos en este caso la API "Alpha Vantage". Es por esto que cuenta con endpoints REST que reciben solicitudes del cliente React o del cliente Java para pruebas     por consola. Tambien gestiona la lógica de negocio y el enrutamiento hacia los servicios externos. Uno de los requisitos era implementar un sistema de caché simple, que evita llamadas repetidas a servicios externos con los mismos parámetros, mejorando rendimiento y     eficiencia el cual se implemento haciendo uso de un hashmap como estructura de datos.
+
+  - **Cliente de Consola (Java)**
+
+    El objetivo de esta clase es poder probar el comportamiento del backend de forma automatizada y sin necesidad de entrar por el cliente web, este cuenta con una prueba de concurrencia donde se simulan múltiples usuarios o peticiones simultáneas hacia los endpoints       del backend. Esta utiliza conexiones HTTP simples, enviando y recibiendo datos en formato JSON.
+    
+    Por motivos de tiempo no se tuvieron problemas al moemnto de conectar la API por lo que no encuentra la ruta :(.
+
+  - **Caché en el Backend (Gateway)**
+
+    Como ya se menciono mas arriba el servidor backend implementa una estructura de datos de tipo caché, en este caso un HashMap, donde el valor es la respuesta JSON obtenida. 
+
+
+5. Despliegue
+
+Para el despliegue se uso Azure y como solamente se utilizo un repo todos los servicios estan desplegados en el nmismo lado
+
+Todos los componentes (frontend, backend y servicios externos si los hay) deben estar desplegados en la nube, actualmente tengo problemas con la fase de deploy pero me parece (no me dio tiempo a corregirlo) que es un tema de autenticacion. Mas abajo se adjuntan evidencias
+
 ### Despliegue + CI/CD (Azure)
 
 ![](images/despliegue.png)
