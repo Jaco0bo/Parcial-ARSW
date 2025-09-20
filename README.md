@@ -63,5 +63,10 @@ AZURE como plataforma de producción.
 
 ### Despliegue + CI/CD (Azure)
 
+![](images/despliegue.png)
+
+![](images/despliegue2.png)
+
+![](images/despliegue3.png)
 
 
