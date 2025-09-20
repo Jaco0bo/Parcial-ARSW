@@ -130,7 +130,11 @@ La API key esta publica, lo se.
 
 ![](images/config.png)
 
+### Pruebas
 
+Actualemte tira error 404 dado que no encuentra por alguna razon la direccion:
+
+![](images/pruebas.png)
 
 
 
