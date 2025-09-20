@@ -73,4 +73,14 @@ AZURE como plataforma de producción.
 
 ![](images/spring1.png)
 
+### Cliente Web (React)
+
+![](images/clienteReact.png)
+
+### Cliente java 
+
+![](images/clienteJava.png)
+
+
+
 
