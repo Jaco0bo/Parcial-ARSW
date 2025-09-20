@@ -92,11 +92,11 @@ Estilo de Arquitectura: **RESTful Services**.
     Como ya se menciono mas arriba el servidor backend implementa una estructura de datos de tipo caché, en este caso un HashMap, donde el valor es la respuesta JSON obtenida. 
 
 
-5. Despliegue
+  - **Despliegue (Azure)**
 
-Para el despliegue se uso Azure y como solamente se utilizo un repo todos los servicios estan desplegados en el nmismo lado
+    Para el despliegue se uso Azure y como solamente se utilizo un repo todos los servicios estan desplegados en el nmismo lado
 
-Todos los componentes (frontend, backend y servicios externos si los hay) deben estar desplegados en la nube, actualmente tengo problemas con la fase de deploy pero me parece (no me dio tiempo a corregirlo) que es un tema de autenticacion. Mas abajo se adjuntan evidencias
+    Todos los componentes (frontend, backend y servicios externos si los hay) deben estar desplegados en la nube, actualmente tengo problemas con la fase de deploy pero me parece (no me dio tiempo a corregirlo) que es un tema de autenticacion. Mas abajo se adjuntan         evidencias.
 
 ### Despliegue + CI/CD (Azure)
 
@@ -109,6 +109,8 @@ Todos los componentes (frontend, backend y servicios externos si los hay) deben 
 ### Servidor Spring
 
 ![](images/spring1.png)
+
+La API key esta publica, lo se.
 
 ### Cliente Web (React)
 
