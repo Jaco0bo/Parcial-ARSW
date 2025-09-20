@@ -85,6 +85,12 @@ AZURE como plataforma de producción.
 
 ![](images/controller.png)
 
+### Manejo cache
+
+![](images/cache.png)
+
+![](images/config.png)
+
 
 
 
