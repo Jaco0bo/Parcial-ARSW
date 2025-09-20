@@ -81,6 +81,12 @@ AZURE como plataforma de producción.
 
 ![](images/clienteJava.png)
 
+### Controller para manejo de los llamados
+
+![](images/controller.png)
+
+
+
 
 
 
